@@ -1,74 +1,95 @@
 # Password Cracking Simulation
 
-This project demonstrates different password-cracking techniques in a controlled, educational environment. The simulation covers:
-1. **Brute Force Attack**: Attempts all possible combinations of characters to find a target password.
-2. **Dictionary Attack**: Uses a list of commonly used passwords to guess a target password.
-3. **Hash Cracking**: Simulates password cracking by comparing hashes of common passwords.
+## Project Overview
 
-## Project Structure
+The Password Cracking Simulation is a JavaScript-based application that showcases different techniques used for cracking passwords, including brute-force and dictionary attacks. This project is designed for educational purposes to illustrate the vulnerabilities of weak passwords.
 
-PasswordCrackingSimulation/
-│
-├── bruteForceAttack/
-│   └── bruteForce.js          # Code for Brute Force Attack simulation
-│
-├── dictionaryAttack/
-│   └── dictionaryAttack.js    # Code for Dictionary Attack simulation
-│
-├── hashCracking/
-│   └── hashCracking.js        # Code for Hash Cracking simulation
-│
-└── package.json               # Node.js configuration file (for dependencies)
+## Table of Contents
 
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Code Structure](#code-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## Setup Instructions
+## Features
 
-1. **Clone the Repository** (or create your project folder structure as shown).
-2. **Install Dependencies**:
-   - Navigate to the project folder and run:
+- **Brute-Force Attack**: Attempts all possible combinations of characters.
+- **Dictionary Attack**: Uses a list of common passwords to find matches.
+- **Hash Cracking**: Attempts to crack hashed passwords by comparing generated hashes to the target hash, supporting hash functions like MD5, SHA-1, and SHA-256.
+
+## Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/en/download/) (includes npm)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+## Installation
+
+ **Clone the Repository**
+1. Open your terminal and run the following command to clone the repository:
+
    ```bash
-   npm install bcryptjs
+   git clone <repository-url>
 
-This installs bcryptjs, used in the Hash Cracking simulation.
+2. Navigate to the Project Directory Change to the directory of the cloned repository:
 
-Run Each Simulation:
-Go into each attack folder (e.g., bruteForceAttack, dictionaryAttack, hashCracking) and run the respective .js file using Node.js.
-Attack Simulations
-1. Brute Force Attack
-This script attempts every possible combination of lowercase letters until it finds the correct password.
+    ```bash
+    cd Password-Cracking-Simulation
 
-Run the Simulation:
-    cd bruteForceAttack
-    node bruteForce.js
+3. Open the Project in Visual Studio Code Launch Visual Studio Code with the project:
 
-Expected Output: The program will display each attempt and print a message when it finds the target password.
+    ```bash
+    code .
 
-2. Dictionary Attack
-This script uses a predefined list of common passwords to attempt a match with the target password.
+4. Install Required Packages If you have a package.json file, install the dependencies using:
 
-Run the Simulation:
-    cd dictionaryAttack
-    node dictionaryAttack.js
+    ```bash
+    npm install
 
-Expected Output: The program checks each password from the dictionary and displays a message when it finds the target password.
+##  Usage
 
-3. Hash Cracking with bcryptjs
-This simulation hashes a target password and attempts to crack it by comparing hashed versions of common passwords.
+1. Run the Simulation To start the password cracking simulation, execute the following command in your terminal:
 
-Run the Simulation:
-    cd hashCracking
-    node hashCracking.js 
+    ```bash
+    node main.js
 
-Expected Output: The program hashes each password in the dictionary and attempts to match it to the target hash. If a match is found, it displays the original password.
+2. Choose the Cracking Method The application will prompt you to select a method (brute-force or dictionary attack). Follow the on-screen instructions.
 
-Project Insights
-Brute Force Limitations: Brute force is exhaustive and slow for long passwords, but effective against short, weak passwords.
-Dictionary Attack Limitations: Limited by the dictionary’s size, so uncommon passwords remain secure.
-Hash Cracking: Demonstrates the importance of strong, unique hashes and secure password storage techniques.
-Security Recommendations
-Use Strong Passwords: Avoid short or common passwords.
-Employ Multi-Factor Authentication: Adds another layer of protection.
-Store Passwords Securely: Use salt and hash for storing passwords instead of storing them in plain text.
+3. Provide Input Data Based on your selected method:
 
-Disclaimer
-This project is strictly for educational purposes and aims to raise awareness about password security and common vulnerabilities. Unauthorized use of these techniques against any system without permission is illegal and unethical.
+    - For Brute-Force, specify parameters like password length and character set.
+    - For Dictionary Attack, either input a custom dictionary file path or use the default passwords.txt.
+
+4. View the Results After execution, results will be displayed in the terminal, indicating whether the password was successfully cracked and the time taken.
+
+## Code Structure
+
+**All necessary code files are included in this repository:**
+- `main.js`: Entry point for the application.
+- `bruteForce.js`: Contains the brute-force attack implementation.
+- `dictionaryAttack.js`: Contains the dictionary attack implementation.
+- `hashCrack.js`: Implements hash-cracking functionality, including support for MD5, SHA-1, and SHA-256 hash algorithms.
+- `passwords.txt`: A sample list of passwords for use in dictionary and hash-cracking attacks.
+
+## Contributing
+    Contributions are encouraged! If you have suggestions or improvements, please fork the repository and submit a pull request.
+
+## License
+    This project is licensed under the MIT License. Refer to the LICENSE file for details.
+
+## Acknowledgments
+    Thank you to the open-source community and various resources that have supported the development of this project. Special thanks to educational content that has provided insights into password security and cracking techniques.
+
+    
+### Instructions
+
+1. **Replace `<repository-url>`** with the actual URL of your GitHub repository.
+2. **Ensure the code structure matches your files** in the repository.
+3. **Save this as `README.md`** in your project directory.
+
+This README file should provide a clear understanding of the project and how to run it! Feel free to make any further adjustments as needed.
